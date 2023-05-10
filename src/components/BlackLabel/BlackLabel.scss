@@ -1,0 +1,8 @@
+@use '../../utils/style_constants/constants.scss' as var;
+
+.black-label {
+    font-weight: var.$font-weight-700;
+    color: var.$main-dark-blue;
+    font-size: 16px;
+    line-height: 19.2px;
+}

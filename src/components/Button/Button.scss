@@ -1,3 +1,5 @@
+@use '../../utils/style_constants/constants.scss' as var;
+
 .button {
     border-radius: 5px;
     border: none;
@@ -5,9 +7,10 @@
     color: white;
     size: 16px;
     line-height: 19px;
-    background-color: rgba(34, 41, 53, 1);
+    background-color: var.$main-dark-blue;
     
         &:hover {
         cursor: pointer;
+        background-color: var.$main-green;
     }
 }
