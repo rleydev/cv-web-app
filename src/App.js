@@ -1,11 +1,17 @@
+import { Route, Routes} from 'react-router-dom';
 import './App.css';
-import StartPage from './pages/StartPage/StartPage';
+import StartPage from './pages/startpage/StartPage';
+import MainPage from './pages/mainpage/MainPage';
+
 
 function App() {
   return (
-    <div className="App">
-      <StartPage />
-    </div>
+    <div className='App'>
+      <Routes>
+        <Route path='/' element={<StartPage />} />
+        <Route path='/main' element={<MainPage />} />
+      </Routes>
+    </div> 
   );
 }
 
