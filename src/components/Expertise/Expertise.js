@@ -14,14 +14,9 @@ const Expertise = ({data}) => {
                         <BlackLabel text={element.info.job} />
                         <p className='expertise-container__right__description'>{element.info.description}</p>
                     </div>
-
             </div>
-            )
-
-            }
-            
+            )} 
         </>
-        
     )
 }
 

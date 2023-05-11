@@ -1,4 +1,5 @@
 import Box from '../../components/Box/Box'
+import Contacts from '../../components/Contacts/Contacts'
 import Education from '../../components/Education/Education'
 import Experience from '../../components/Experience/Experience'
 import './MainPage.scss'
@@ -35,12 +36,31 @@ const MainPage = () => {
             }
         ]
 
+    const contactsTitle = "Contacts"
+    const contactsData = {
+      phoneNum: "500 342 242",
+      email: "office@kamsolutions.pl",
+      twitter: {
+        title: "Twitter",
+        link: "https://twitter.com/?lang=en"
+      },
+      facebook: {
+        title: "Facebook",
+        link: "https://www.facebook.com/"
+      },
+      skype: {
+        title: "Skype",
+        link: "https://www.skype.com/en/",
+      }
+    }
+
     return (
         <section className="main-page__section">
             <article className='main-page__section__main'>
                 <Box title={aboutMeBoxData.title} content={aboutMeBoxData.content} />
                 <Education title={educationTitle} timeLineData={timeLineData} />
                 <Experience title={experienceTitle} data={experienceData} />
+                <Contacts title={contactsTitle} data={contactsData} />
             </article>
         </section>
     )
