@@ -9,7 +9,6 @@ const Contacts = ({title, data}) => {
     return (
         <article className='contacts'>
             <Title title={title} />
-
             <div className='contacts__container'>
                 <div className='contacts__container__phone-container'>
                     <FontAwesomeIcon className='contacts__container__phone-container__icon' icon={faPhone} color='#26C17E' />
@@ -41,8 +40,6 @@ const Contacts = ({title, data}) => {
                     </div>
                 </div>
             </div>
-
-            
         </article>
     )
 }
