@@ -7,6 +7,8 @@ import { useState } from 'react'
 const Portfolio = ({title}) => {
 
     const [filterType, setFilterType] = useState('all');
+    const [isAnimating, setIsAnimating] = useState(false);
+
 
     const portfolioData = [
         {
@@ -59,6 +61,11 @@ const Portfolio = ({title}) => {
 
     const handleFilterButtonClick = (type) => {
         setFilterType(type);
+        setIsAnimating(true);
+
+        setTimeout(() => {
+            setIsAnimating(false);
+        }, 4000);
     };
 
     return (
@@ -82,10 +89,12 @@ const Portfolio = ({title}) => {
                     </button>
                 </div>
 
-                <div className='portfolio__container__content-box'>
+                <div className={`portfolio__container__content-box`}>
                     {filteredData.map((item) => (
-                        <div key={item.id} className="portfolio__container__content-box--item">
-                            <img className="portfolio__container__content-box--img" src={item.image} alt={item.info.title} />
+                        <div key={item.id} className={`portfolio__container__content-box--item`}>
+                            <img className={`portfolio__container__content-box--img ${
+                            isAnimating ? "animate-portfolio" : ""
+                        }`} src={item.image} alt={item.info.title} />
                             <div className='portfolio-info'>
                                 <h4>{item.info.title}</h4>
                                 <p>{item.info.description}</p>
@@ -95,8 +104,6 @@ const Portfolio = ({title}) => {
                         </div>
                     ))}
                 </div>
-            
-                
             </div>
         </article>
     )

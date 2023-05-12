@@ -50,6 +50,7 @@
         &__content-box {
             display:  flex;
             flex-direction: row;
+            justify-content: flex-start;
             gap: 35px;
             flex-wrap: wrap;
 
@@ -59,7 +60,6 @@
 
             &--item {
                 position: relative;
-
             }
         }
     }
@@ -69,7 +69,9 @@
     color: var.$main-green;
 }
 
-
+.content--hide {
+    display: none;
+}
 
 .portfolio-info {
     position: absolute;
