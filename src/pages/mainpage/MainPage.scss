@@ -1,6 +1,7 @@
+@use '../../utils/styles/constants.scss' as var;
 .main-page__section {
-    height: 2622px;
-    // height: auto;
+    // height: 2622px;
+    height: auto;
 
     display: flex;
 
@@ -16,7 +17,4 @@
 
         transition: all .3s linear;
     }
-    
-   
-
 }
