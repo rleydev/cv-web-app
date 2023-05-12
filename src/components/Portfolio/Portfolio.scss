@@ -1,0 +1,116 @@
+@use '../../utils/styles/constants.scss' as var;
+
+.portfolio {
+    display:  flex;
+    flex-direction:  column;
+    align-items: flex-start;
+    gap: 40px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__options {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+
+            &--all {
+                padding: 0;
+                border: 0;
+                background-color: white;
+                font-size: 16px;
+                font-weight: var.$font-weight-400;
+                line-height: 19.2px;
+                color:  var.$main-dark-blue;
+            }
+
+            &--code {
+                padding: 0;
+                border: 0;
+                background-color: white;
+                font-size: 16px;
+                font-weight: var.$font-weight-400;
+                line-height: 19.2px;
+                color:  var.$main-dark-blue;
+            }
+
+            &--ui {
+                padding: 0;
+                border: 0;
+                background-color: white;
+                font-size: 16px;
+                font-weight: var.$font-weight-400;
+                line-height: 19.2px;
+                color:  var.$main-dark-blue;
+            }
+        }
+
+        &__content-box {
+            display:  flex;
+            flex-direction: row;
+            gap: 35px;
+            flex-wrap: wrap;
+
+            &--img {
+                z-index: 20;
+            }
+
+            &--item {
+                position: relative;
+
+            }
+        }
+    }
+}
+
+.portfolio-button--active {
+    color: var.$main-green;
+}
+
+
+
+.portfolio-info {
+    position: absolute;
+    height: 0;
+    z-index: 21;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 10px;
+
+    h4 {
+        display: none;
+        font-size: 16px;
+        font-weight: var.$font-weight-700;
+        line-height: 19.2px;
+        color:  var.$main-green;
+        text-align: left;
+    }
+
+    p {
+        display: none;
+        font-size: 14px;
+        font-weight: var.$font-weight-400;
+        line-height: 21px;
+        color:  var.$main-dark-blue;
+        text-align: left;
+    }
+
+    a {
+        display: none;
+        font-size: 14px;
+        font-weight: var.$font-weight-400;
+        line-height: 16px;
+        color:  var.$main-green;
+        text-align: left;
+    }
+}
+

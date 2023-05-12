@@ -1,5 +1,11 @@
-@mixin media-query($width) {
+@mixin media-query_min-width($width) {
     @media only screen and (max-width: $width)  {
+        @content;
+    }
+}
+
+@mixin media-query_max-width($width) {
+    @media only screen and (min-width: $width)  {
         @content;
     }
 }

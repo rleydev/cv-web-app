@@ -41,7 +41,7 @@
             line-height: 19.2px;
             color: var.$main-raven;
 
-            @include mixins.media-query('600px') {
+            @include mixins.media-query_min-width('600px') {
                 display: none;
             }
            

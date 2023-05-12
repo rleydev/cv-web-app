@@ -26,12 +26,12 @@ const Navigation = () => {
                     Experience
                 </p>
             </Link>
-            {/* <Link to='portfolio' className='navigation__container' smooth={true} duration={500} activeClass='current-page-location'>
+            <Link to='portfolio' className='navigation__container' spy={true} smooth={true} duration={500} activeClass='current-page-location'>
                 <FontAwesomeIcon className='navigation__container__icon' icon={faSuitcase} color='#667081' />
                 <p className='navigation__container__link'>
                     Portfolio
                 </p>
-            </Link> */}
+            </Link>
             <Link to='contacts' className='navigation__container' spy={true} smooth={true} duration={500} activeClass='current-page-location'>
                 <FontAwesomeIcon className='navigation__container__icon' icon={faLocationArrow} color='#667081' />
                 <p className='navigation__container__link'>
