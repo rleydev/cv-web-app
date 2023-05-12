@@ -1,6 +1,16 @@
 @use '../../utils/styles/constants.scss' as var;
 @use '../../utils/styles/mixins.scss' as mixins;
 
+.nav--hidden {
+    .navigation__container__link {
+        opacity: 0;
+    }
+
+    .navigation__container__icon {
+        opacity: 0;
+    }
+}
+
 .navigation {
     display: flex;
     flex-direction: column;

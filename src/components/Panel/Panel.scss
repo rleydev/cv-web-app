@@ -1,6 +1,39 @@
 @use '../../utils/styles/constants.scss' as var;
 @use '../../utils/styles/mixins.scss' as mixins;
 
+.panel--hiden {
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    transition: all .3s linear; 
+
+    .panel__stick {
+        position: sticky;
+        top: 20px;
+        left: 0px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        width: 30px;
+    }
+
+    .panel__photo-container__photo {
+        width: 0;
+    }
+}
+
+.panel-photo--hiden {
+    width: 0;
+    opacity: 0;
+}
+
+.panel-button--hiden {
+    position: absolute;
+    bottom: 32px;
+    left: 0px;
+    display: none;
+    transition: all .3s linear; 
+}
+
 
 .panel {
     background-color: var.$main-dark-blue;
@@ -9,6 +42,8 @@
     position: sticky;
     top: 0;
     left: 0;
+
+    // transition: all .3s linear; 
 
     @include mixins.media-query_min-width('600px') {
         width: 54px;
@@ -21,7 +56,7 @@
     }
 
     &__stick {
-        width: 40px;
+        width: 30px;
         height: 30px;
         background-color: var.$main-dark-blue;
         display: flex;
@@ -29,6 +64,8 @@
         justify-content: center;
 
         border-radius: 5px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
 
         position: absolute;
         top: 20px;
@@ -110,6 +147,8 @@
 
         text-decoration: none;
 
+
+
         @include mixins.media-query_min-width('600px') {
             bottom: 29px;
             left: 8px;
@@ -160,7 +199,7 @@
             }
 
             &__text {
-                
+
                 @include mixins.media-query_min-width('600px') { 
                     display: none;
                 }
