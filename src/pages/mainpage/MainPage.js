@@ -3,9 +3,10 @@ import Contacts from '../../components/Contacts/Contacts'
 import Education from '../../components/Education/Education'
 import Experience from '../../components/Experience/Experience'
 import Feedback from '../../components/Feedback/Feedback'
-
+import { Element } from 'react-scroll'
 import feedBackAvatar from '../../assets/MainPage/userfeedback.png'
 import './MainPage.scss'
+import Panel from '../../components/Panel/Panel'
 
 const MainPage = () => {
 
@@ -59,21 +60,34 @@ const MainPage = () => {
 
     const feedbackTitle = "Feedbacks"
     const feedBackData = [ 
-      {feedback: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ',
+      { id: 0, feedback: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ',
       reporter: { photoUrl: feedBackAvatar, name: 'John Doe', citeUrl: 'https://www.citeexample.com' } },
-      {feedback: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ', 
+      { id: 1, feedback: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. ', 
       reporter: { photoUrl: feedBackAvatar, name: 'John Doe', citeUrl: 'https://www.citeexample.com' } } 
     ]
     
 
     return (
         <section className="main-page__section">
+          <aside className='main-page__side'>
+              <Panel data={'John Doe'} />
+          </aside>
             <article className='main-page__section__main'>
-                <Box title={aboutMeBoxData.title} content={aboutMeBoxData.content} />
+              <Element id="about" >
+                <Box  title={aboutMeBoxData.title} content={aboutMeBoxData.content} />
+              </Element>
+              <Element id="education">
                 <Education title={educationTitle} timeLineData={timeLineData} />
+              </Element>
+              <Element id="experience">
                 <Experience title={experienceTitle} data={experienceData} />
+              </Element>
+              <Element id="contact">
                 <Contacts title={contactsTitle} data={contactsData} />
+              </Element>
+              <Element id="feedback">
                 <Feedback title={feedbackTitle} feedbackData={feedBackData} />
+              </Element>
             </article>
         </section>
     )

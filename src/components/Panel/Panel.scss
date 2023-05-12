@@ -1,0 +1,126 @@
+@use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
+
+
+.panel {
+    background-color: var.$main-dark-blue;
+    height: 100vh;
+    width: 250px;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    @include mixins.media-query('600px') {
+        width: 54px;
+    }
+
+    &__stick {
+        width: 40px;
+        height: 30px;
+        background-color: var.$main-dark-blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 5px;
+
+        position: absolute;
+        top: 20px;
+        left: 240px;
+
+        @include mixins.media-query('600px') {
+            left: 47px;
+            width: 33px;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &__img {
+            margin-left: 5px;
+            width: 12px;
+            height: 10px;
+        }
+
+    }
+
+    &__photo-container {
+        padding-top: 10px;
+        
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        
+        &__photo {
+            width: 100px;
+            height: 100px;
+
+            @include mixins.media-query('600px') {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &__name {
+            font-size: 16px;
+            font-weight: var.$font-weight-400;
+            line-height: 19.2px;
+            color: white;
+
+            @include mixins.media-query('600px') {
+                display: none;
+            }
+        }
+    }
+
+    &__nav-container {
+        margin-top: 69px;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 32px;
+        left: 60px;
+
+        text-decoration: none;
+
+        @include mixins.media-query('600px') {
+            width: 40px;
+            height: 30px;
+            bottom: 29px;
+            left: 8px;
+        }
+
+       &__but {
+            border-radius: 5px;
+            border: none;
+            font-weight: 400;
+            color: white;
+            size: 16px;
+            line-height: 19px;
+            background-color: var.$main-dark-blue;
+            display: flex;
+            flex-direction: row;
+            gap: 13px;
+            align-items: center;
+            justify-content: center;
+            
+            &:hover {
+                cursor: pointer;
+                background-color: var.$main-green;
+            }
+
+            &__text {
+                @include mixins.media-query('600px') {
+                    display: none;
+                }
+            }
+       }
+    }
+}

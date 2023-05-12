@@ -8,9 +8,15 @@
     size: 16px;
     line-height: 19px;
     background-color: var.$main-dark-blue;
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
     
-        &:hover {
+    &:hover {
         cursor: pointer;
         background-color: var.$main-green;
+      
     }
 }

@@ -9,7 +9,7 @@ const Feedback = ({title, feedbackData}) => {
             <Title title={title} />
             {
                 feedbackData.map(element => 
-                    <div className='feedback-container'>
+                    <div key={element.id} className='feedback-container'>
                         <Info text={element.feedback} />
                         <div className='feedback-container__user'>
                             <img className='feedback-container__user__image' src={element.reporter.photoUrl} alt='user' />

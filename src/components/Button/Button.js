@@ -1,8 +1,8 @@
 import './Button.scss'
 
-const Button = ({height, width, buttonName}) => {
+const Button = ({height, width, buttonName, icon}) => {
     return (
-        <button className="button" style={{height: height, width: width}}>{buttonName}</button>
+        <button className="button" style={{height: height, width: width}}>{icon}{buttonName}</button>
     )
 }
 
