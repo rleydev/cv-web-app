@@ -67,4 +67,37 @@
     max-height: 80vh;
     overflow-y: auto;
     border: none;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.timeline-container--uploading {
+    height: 35vh;
+    width: 78vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        align-self: center;
+        animation: rotateIcon 2s infinite linear;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: red;
+    }
+    
 }
