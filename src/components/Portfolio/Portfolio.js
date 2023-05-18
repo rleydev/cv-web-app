@@ -2,7 +2,7 @@ import './Portfolio.scss'
 import Title from '../Title/Title'
 import portfImg1 from '../../assets/MainPage/port1.png'
 import portfImg2 from '../../assets/MainPage/port2.png'
-import { useState, useRef, useEffect } from 'react'
+import { useState} from 'react'
 
 const Portfolio = ({title}) => {
 

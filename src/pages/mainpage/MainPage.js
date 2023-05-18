@@ -8,6 +8,8 @@ import feedBackAvatar from '../../assets/MainPage/userfeedback.png'
 import './MainPage.scss'
 import Panel from '../../components/Panel/Panel'
 import Portfolio from '../../components/Portfolio/Portfolio'
+import Skills from '../../components/Skiils/Skills'
+
 
 const MainPage = () => {
 
@@ -83,6 +85,9 @@ const MainPage = () => {
               </Element>
               <Element id="experience">
                 <Experience title={experienceTitle} data={experienceData} />
+              </Element>
+              <Element id= "skills">
+                <Skills />
               </Element>
               <Element id='portfolio'>
                 <Portfolio title={portfolioTitle} />
