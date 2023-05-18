@@ -3,10 +3,10 @@ import './Box.scss'
 
 const Box = ({title, content}) => {
     return (
-        <article className="box">
+        <section className="box">
             <Title title={title} />
             <p>{content}</p>
-        </article>
+        </section>
     )
 }
 

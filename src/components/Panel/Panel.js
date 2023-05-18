@@ -25,25 +25,25 @@ const Panel = ({data}) => {
     }, [togglePanel])
 
      return (
-        <article className={togglePanel === false ? `panel` : 'panel--hiden'}>
+        <section className={togglePanel === false ? `panel` : 'panel--hidden'}>
             <div className='panel__stick' onClick={panelStickPressed}>
                     <img className='panel__stick__img' src={stick} alt='stick' />
             </div>
-            <div className={togglePanel === false ? 'panel__photo-container' : 'panel-photo--hiden'}>
+            <div className={togglePanel === false ? 'panel__photo-container' : 'panel-photo--hidden'}>
                 <img className='panel__photo-container__photo' src={avatar} alt='avatar' />
                 <h2 className='panel__photo-container__name'>{data}</h2>
             </div>
-            <div className={togglePanel === false ? 'panel__nav-container' : 'panel--hiden'}>
+            <div className={togglePanel === false ? 'panel__nav-container' : 'panel--hidden'}>
                 <Navigation panelState={togglePanel} />
             </div>
-            <Link to='/' className={togglePanel === false ? 'panel__button' : 'panel-button--hiden'}>
+            <Link to='/' className={togglePanel === false ? 'panel__button' : 'panel-button--hidden'}>
                 <button className="panel__button__but">
                     <FontAwesomeIcon icon={faAngleLeft} />
                     <p className='panel__button__but__text'>Go back</p>
                 </button>
             </Link>
             
-        </article>
+        </section>
      )
 }
 

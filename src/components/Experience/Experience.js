@@ -4,10 +4,10 @@ import './Experience.scss'
 
 const Experience = ({title, data}) => {
     return (
-        <article className='experience'>
+        <section className='experience'>
             <Title title={title} />
             <Expertise data={data} />
-        </article>
+        </section>
     )
 }
 

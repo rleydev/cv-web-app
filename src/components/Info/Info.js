@@ -2,9 +2,9 @@ import './Info.scss'
 
 const Info = ({text}) => {
     return(
-        <div className='info-container'>
+        <article className='info-container'>
             <p className='info-container__text'>{text}</p>
-        </div>
+        </article>
     )
 }
 

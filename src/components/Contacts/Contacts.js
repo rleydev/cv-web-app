@@ -7,9 +7,9 @@ import BlackLabel from '../BlackLabel/BlackLabel'
 
 const Contacts = ({title, data}) => {
     return (
-        <article className='contacts'>
+        <section className='contacts'>
             <Title title={title} />
-            <div className='contacts__container'>
+            <article className='contacts__container'>
                 <div className='contacts__container__phone-container'>
                     <FontAwesomeIcon className='contacts__container__phone-container__icon' icon={faPhone} color='#26C17E' />
                     <a href={`tel:${data.phoneNum}`}> <BlackLabel text={data.phoneNum} /></a>
@@ -39,8 +39,8 @@ const Contacts = ({title, data}) => {
                         <a href={data.skype.link}>{data.skype.link}</a>
                     </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </section>
     )
 }
 

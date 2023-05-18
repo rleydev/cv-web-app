@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-const TimeLine = ({data}) => {
+const TimeLine = () => {
 
   const {educationArray, isLoading, error} = useSelector(state => state.reducers.educationReducer)
   const {getEducation} = useActions()
@@ -20,7 +20,7 @@ const TimeLine = ({data}) => {
   }, [])
 
     return (
-      <div className='timeline__container'>
+      <article className='timeline__container'>
         {
           isLoading === true ? (
             <div className='timeline-container--uploading'>
@@ -47,7 +47,7 @@ const TimeLine = ({data}) => {
             ))
           )
         }
-      </div>
+      </article>
     )
   }
 

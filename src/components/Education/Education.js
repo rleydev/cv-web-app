@@ -2,14 +2,14 @@ import TimeLine from '../TimeLine/TimeLine'
 import Title from '../Title/Title'
 import './Education.scss'
 
-const Education = ({title, timeLineData}) => {
+const Education = ({title}) => {
     return (
-        <article className='education'>
+        <section className='education'>
             <div className='education__title' >
             <Title title={title} />
             </div>
-            <TimeLine data={timeLineData} />
-        </article>
+            <TimeLine />
+        </section>
     )
 }
 

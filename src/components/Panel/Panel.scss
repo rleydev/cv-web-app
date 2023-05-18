@@ -1,19 +1,21 @@
 @use '../../utils/styles/constants.scss' as var;
 @use '../../utils/styles/mixins.scss' as mixins;
 
-.panel--hiden {
-    position: fixed;
+.panel--hidden {
+    position: relative;
     width: 0;
     height: 100vh;
-    transition: all .3s linear; 
+    transition: all .3s linear;
+
 
     .panel__stick {
-        position: sticky;
+        position: fixed;
         top: 20px;
         left: 0px;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         width: 30px;
+        transition: all .3s linear;
     }
 
     .panel__photo-container__photo {
@@ -21,12 +23,12 @@
     }
 }
 
-.panel-photo--hiden {
+.panel-photo--hidden {
     width: 0;
     opacity: 0;
 }
 
-.panel-button--hiden {
+.panel-button--hidden {
     position: absolute;
     bottom: 32px;
     left: 0px;

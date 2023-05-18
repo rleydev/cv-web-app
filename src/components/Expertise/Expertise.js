@@ -3,7 +3,7 @@ import './Expertise.scss'
 
 const Expertise = ({data}) => {
     return(
-        <> 
+        <article> 
             { data.map(element =>
                 <div key={element.id} className='expertise-container'>
                     <div className='expertise-container__left'>
@@ -16,7 +16,7 @@ const Expertise = ({data}) => {
                     </div>
             </div>
             )} 
-        </>
+        </article>
     )
 }
 
