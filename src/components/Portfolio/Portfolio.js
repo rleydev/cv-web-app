@@ -113,7 +113,6 @@ const Portfolio = ({title}) => {
 
                 <div className={`portfolio__container__content-box`}>
 
-
                         <div className={`portfolio__container__content-box--item code`}>
                             <img className={`portfolio__container__content-box--img `} src={portfImg1} alt={'portf'} />
                             <div className='portfolio-info'>

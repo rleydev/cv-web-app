@@ -86,10 +86,10 @@ const MainPage = () => {
               <Element id="experience">
                 <Experience title={experienceTitle} data={experienceData} />
               </Element>
-              <Element id= "skills">
+              <Element className='skills-main' id= "skills">
                 <Skills />
               </Element>
-              <Element id='portfolio'>
+              <Element className='portfolio-main' id='portfolio'>
                 <Portfolio title={portfolioTitle} />
               </Element>
               <Element id="contact">

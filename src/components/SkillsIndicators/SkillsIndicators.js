@@ -10,8 +10,6 @@ const SkillsIndicators = () => {
                     </div>
                     <div className='skills__info__border--stick'>
                     </div>
-                    <div className='skills__info__border--stick'>
-                    </div>
                 </div>
                 <div className='skills__info__text'>
                     <p>Beginner</p>
