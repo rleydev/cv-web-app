@@ -1,4 +1,5 @@
 @use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
 
 .portfolio {
     display:  flex;
@@ -10,6 +11,15 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        width: 78vw;
+
+        @include mixins.media-query_min-width('1350px') {
+            width: 70vw;
+        }
+
+        @include mixins.media-query_min-width('1350px') {
+            width: 50vw;
+        }
 
         &__options {
             display: flex;
@@ -48,18 +58,27 @@
         }
 
         &__content-box {
-            display:  flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            gap: 35px;
+            display: flex;
             flex-wrap: wrap;
+            flex-direction: row;
+            gap: 20px;
+            width: 100%;
+
 
             &--img {
-                z-index: 20;
+                width: 100%;
+                height: 100%;
+
             }
 
             &--item {
-                position: relative;
+                display: flex;
+                position: static;
+                width: 308px;
+                height: 192px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+
             }
         }
     }
@@ -75,16 +94,19 @@
 
 .portfolio-info {
     position: absolute;
-    height: 0;
     z-index: 21;
-    bottom: 4px;
+    bottom: 0px;
     left: 0;
+    width: 100%;
     right: 0;
+  
     background-color: #FFFFFF;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 5px;
+    padding-right: 5px;
     
     gap: 10px;
 
@@ -92,7 +114,7 @@
         display: none;
         font-size: 16px;
         font-weight: var.$font-weight-700;
-        line-height: 19.2px;
+        line-height: 17px;
         color:  var.$main-green;
         text-align: left;
     }

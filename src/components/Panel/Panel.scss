@@ -2,14 +2,13 @@
 @use '../../utils/styles/mixins.scss' as mixins;
 
 .panel--hidden {
-    position: relative;
+    position: sticky;
     width: 0;
     height: 100vh;
     transition: all .3s linear;
 
-
     .panel__stick {
-        position: fixed;
+        position: sticky;
         top: 20px;
         left: 0px;
         border-top-left-radius: 0;
@@ -23,17 +22,33 @@
     }
 }
 
+// .panel__stick--hidden {
+//     position: fixed;
+//     top: 20px;
+//     left: 0px;
+//     border-top-left-radius: 0;
+//     border-bottom-left-radius: 0;
+//     width: 30px;
+//     transition: all .3s linear;
+// }
+
+.hidden {
+    display: none;
+}
+
 .panel-photo--hidden {
     width: 0;
     opacity: 0;
+    display: none;
 }
 
 .panel-button--hidden {
-    position: absolute;
+    position: sticky;
     bottom: 32px;
     left: 0px;
     display: none;
     transition: all .3s linear; 
+    display: none;
 }
 
 

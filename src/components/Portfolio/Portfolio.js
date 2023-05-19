@@ -2,13 +2,15 @@ import './Portfolio.scss'
 import Title from '../Title/Title'
 import portfImg1 from '../../assets/MainPage/port1.png'
 import portfImg2 from '../../assets/MainPage/port2.png'
-import { useState} from 'react'
+import { useRef, useState, useEffect} from 'react'
+import Isotope from 'isotope-layout'
 
 const Portfolio = ({title}) => {
 
     const [filterType, setFilterType] = useState('all');
-    const [showAnimation, setShowAnimation] = useState(false);
-
+    // const [showAnimation, setShowAnimation] = useState(false);
+    const isotope = useRef()
+    
     const portfolioData = [
         {
             id: 0,
@@ -64,16 +66,26 @@ const Portfolio = ({title}) => {
 
     const handleFilterButtonClick = (type) => {
         setFilterType(type);
-        setShowAnimation(true);
-
-        setTimeout(() => {
-            setShowAnimation(false);
-        }, 2000);
     };
 
-// useEffect(() => {
+    useEffect(() => {
+        isotope.current = new Isotope('.portfolio__container__content-box', {
+          itemSelector: '.portfolio__container__content-box--item',
+          layoutMode: 'fitRows',
+        });
+    
+        return () => {
+          isotope.current.destroy();
+        };
+    }, [filteredData]);
 
-// }, [setShowAnimation])
+    useEffect(() => {
+        filterType === 'all'
+          ? isotope.current.arrange({ filter: `` })
+          : filterType ==='ui' ? isotope.current.arrange({ filter: `.ui` })
+          : isotope.current.arrange({ filter: '.code'});
+    }, [filterType]);
+    
 
     return (
         <section className='portfolio'>
@@ -100,22 +112,40 @@ const Portfolio = ({title}) => {
 
 
                 <div className={`portfolio__container__content-box`}>
-                    {filteredData.map((item) => (
-                        // <CSSTransition in={showAnimation} timeout={2000} classNames="image-animation" unmountOnExit> 
-                        <div key={item.id} className={`portfolio__container__content-box--item`}>
-                            <img className={`portfolio__container__content-box--img ${
-                            showAnimation ? "animate-portfolio" : ""
-                        }`} src={item.image} alt={item.info.title} />
+
+
+                        <div className={`portfolio__container__content-box--item code`}>
+                            <img className={`portfolio__container__content-box--img `} src={portfImg1} alt={'portf'} />
                             <div className='portfolio-info'>
-                                <h4>{item.info.title}</h4>
-                                <p>{item.info.description}</p>
-                                <a href={item.info.link}>{item.info.linkName}</a>
+                                <h4>Some text</h4>
+                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
+                                <a href='https://github.com/rleydev/'>View source</a>
                             </div>
-                            
                         </div>
-                        // </CSSTransition>
-     
-                    ))}
+                        <div className={`portfolio__container__content-box--item ui`}>
+                            <img className={`portfolio__container__content-box--img `} src={portfImg2} alt={'portf'} />
+                            <div className='portfolio-info'>
+                                <h4>Some text</h4>
+                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
+                                <a href='https://github.com/rleydev/'>View source</a>
+                            </div>
+                        </div>
+                        <div className={`portfolio__container__content-box--item code`}>
+                            <img className={`portfolio__container__content-box--img `} src={portfImg1} alt={'portf'} />
+                            <div className='portfolio-info'>
+                                <h4>Some text</h4>
+                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
+                                <a href='https://github.com/rleydev/'>View source</a>
+                            </div>
+                        </div>
+                        <div className={`portfolio__container__content-box--item ui`}>
+                            <img className={`portfolio__container__content-box--img `} src={portfImg2} alt={'portf'} />
+                            <div className='portfolio-info'>
+                                <h4>Some text</h4>
+                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis</p>
+                                <a href='https://github.com/rleydev/'>View source</a>
+                            </div>
+                        </div>
                 </div>
                 
             </article>

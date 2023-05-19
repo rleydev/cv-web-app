@@ -2,6 +2,7 @@
 .main-page__section {
     // height: 2622px;
     height: auto;
+    width: auto;
 
     display: flex;
 
@@ -16,6 +17,12 @@
         margin-top: 40px;
 
         transition: all .3s linear;
+
+        &__side {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
     }
 }
