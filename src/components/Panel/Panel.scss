@@ -8,7 +8,7 @@
     transition: all .3s linear;
 
     .panel__stick {
-        position: sticky;
+        position: fixed;
         top: 20px;
         left: 0px;
         border-top-left-radius: 0;
