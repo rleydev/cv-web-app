@@ -33,7 +33,7 @@ const Panel = ({data}) => {
                 <img className='panel__photo-container__photo' src={avatar} alt='avatar' />
                 <h2 className='panel__photo-container__name'>{data}</h2>
             </div>
-            <div className={togglePanel === false ? 'panel__nav-container' : 'hidden'}>
+            <div className={'panel__nav-container'}>
                 <Navigation panelState={togglePanel} />
             </div>
             <Link to='/' className={togglePanel === false ? 'panel__button' : 'panel-button--hidden'}>
