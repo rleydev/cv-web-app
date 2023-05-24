@@ -2,6 +2,7 @@ import './Form.scss'
 import { Formik, Field, Form } from 'formik'
 import { useState } from 'react';
 import * as Yup from 'yup';
+import { useActions } from '../../services/store/useActions';
 
 const AddSkillSchema = Yup.object().shape({
     skillName: Yup.string()
@@ -12,11 +13,14 @@ const AddSkillSchema = Yup.object().shape({
     .required('Skill range is a required field')
 })
 
+
+
 const SkillsForm = () => {
 
     const [isDirty, setIsDirty] = useState(false); 
+    const {addSkill} = useActions()
 
-        const handleChangeDirty = () => {
+    const handleChangeDirty = () => {
         if (isDirty === false) {
             setIsDirty(true); 
         }
@@ -36,6 +40,8 @@ const SkillsForm = () => {
                 await new Promise((r) => setTimeout(r, 500));
                 alert(JSON.stringify(values, null, 2));
                 setIsDirty(true)
+
+                await addSkill(values)
             }}
 
             onChange={handleChangeDirty}

@@ -4,13 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenAlt } from '@fortawesome/free-solid-svg-icons'
 import SkillsIndicators from '../SkillsIndicators/SkillsIndicators'
 import SkillsForm from '../Form/Form'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useActions } from '../../services/store/useActions'
+import { useSelector } from 'react-redux'
+
 
 
 const Skills = ()=> {
 
     const [showAddSkills, setShowAddSkills] = useState(false)
 
+    const {skillsArray, isLoading, error} = useSelector(state => state.reducers.getSkillsReducer)
+    const {getSkills} = useActions()
+
+
+
+    useEffect(() => {
+        getSkills()
+        console.log(skillsArray)
+    }, [])
 
     return (
         <section className='skills'>
@@ -22,20 +34,22 @@ const Skills = ()=> {
                 </button>
             </div>
 
-            {showAddSkills ? (
-                <SkillsForm />
-            ) : (
-                <div></div>
+            {showAddSkills ? 
+                <SkillsForm /> : null
+            }
+        
+            {isLoading === true ? (<div></div>) : 
+            isLoading === false && error ?  (<div></div>) :
+
+            skillsArray.map((element) =>
+
+                <article key={element.id} className='skills__items-container'>
+                    <div className='skills__items-container__item' style={ {width: `${element.range}%` }}>
+                        <p>{element.name}</p>
+                    </div>
+                </article>
             )}
-            
-            <article className='skills__items-container'>
-                <div className='skills__items-container__item'>
-                    <p>HTML</p>
-                </div>
-                <div className='skills__items-container__item'>
-                    <p>CSS</p>
-                </div>
-            </article>
+
             <SkillsIndicators />
         </section>
     )

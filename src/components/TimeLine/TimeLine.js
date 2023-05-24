@@ -16,7 +16,6 @@ const TimeLine = () => {
 
   useEffect(() => {
     getEducation()
-    console.log('education: ' + error)
   }, [])
 
     return (

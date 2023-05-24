@@ -1,8 +1,13 @@
-import { createServer, Response } from "miragejs"
+import { createServer, Model, Response } from "miragejs"
 
 const server = () => {
 
     createServer({
+
+        models: {
+            skill: Model,
+        },
+
         routes() {
 
             this.namespace = "api"
@@ -41,7 +46,42 @@ const server = () => {
             , 
                 {timing: 3000}
             )
-        },
+
+
+            this.get("/skills", () => 
+
+            // ERROR CHECKING
+
+            // {
+            //     return new Response(404, {}, { error: 'User with id ${id} not found'});
+
+            // })}
+            ({
+                skills: [
+                    {  
+                        id: "0", 
+                        name: "JavaScript", 
+                        range: 70, 
+                    },
+                    { 
+                        id: "1", 
+                        name: "React", 
+                        range: 40, 
+                    },
+                ]
+            })
+            ,
+                {timing: 2000}
+            )
+
+            let newId = 2
+
+            this.post("/skills", (schema, request) => {
+                let attrs = JSON.parse(request.requestBody)
+                attrs.id = newId++
+                return { skill: attrs}
+            })
+        },    
         
     })
 
