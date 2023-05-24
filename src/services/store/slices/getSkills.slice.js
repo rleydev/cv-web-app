@@ -10,7 +10,6 @@ export const skillsSlice = createSlice({
         skillsArray: [],
     },
     reducers: {
-
     }, 
     extraReducers: builder => {
         builder.addCase(getSkills.pending, state => {
@@ -33,4 +32,4 @@ export const skillsSlice = createSlice({
     }
 })
 
-export const { actions, reducer} = skillsSlice
+export const { actions, reducer } = skillsSlice

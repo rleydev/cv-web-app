@@ -17,11 +17,8 @@ const Skills = ()=> {
     const {skillsArray, isLoading, error} = useSelector(state => state.getSkillsReducer)
     const {getSkills} = useActions()
 
-
     const uploadSkills = () => {
-        if (skillsArray.length === 0) {
-            getSkills()
-        }
+        skillsArray.length === 0 && getSkills();
     }
 
     useEffect(() => {
@@ -54,7 +51,7 @@ const Skills = ()=> {
                     </div>
                 </article>
             )}
-
+            
             <SkillsIndicators />
         </section>
     )

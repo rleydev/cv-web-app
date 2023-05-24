@@ -13,17 +13,13 @@ const AddSkillSchema = Yup.object().shape({
     .required('Skill range is a required field')
 })
 
-
-
 const SkillsForm = () => {
 
     const [isDirty, setIsDirty] = useState(false); 
     const {addSkill} = useActions()
 
     const handleChangeDirty = () => {
-        if (isDirty === false) {
-            setIsDirty(true); 
-        }
+        !isDirty && setIsDirty(true);
     };
 
     return (

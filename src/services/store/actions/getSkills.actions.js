@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const fetchSkills = async () => {
+export const fetchSkills = async () => {
     const response = await fetch("https://localhost:3000/api/skills")
 
     if (!response.ok) {

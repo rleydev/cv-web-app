@@ -25,11 +25,32 @@
     "web-vitals": "^2.1.4",
     "yup": "^1.1.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test -- --coverage --passWithNoTests -- --coverageThreshold=branches=35,function=35,lines=35,statements=35"
+    }
+  },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:coverage": "npm test -- --coverage"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 35,
+        "functions": 35,
+        "lines": 35,
+        "statements": 35
+      }
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +71,8 @@
     ]
   },
   "devDependencies": {
-    "miragejs": "^0.1.47"
+    "husky": "^8.0.3",
+    "miragejs": "^0.1.47",
+    "redux-mock-store": "^1.5.4"
   }
 }
