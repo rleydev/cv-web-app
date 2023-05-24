@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getSkills } from "../actions/getSkills.actions";
+import { addSkill } from "../actions/postSkills.actions";
 
-export const getSkillsSlice = createSlice({
+export const skillsSlice = createSlice({
     name: "skills",
     initialState: {
         isLoading: false,
@@ -18,13 +19,18 @@ export const getSkillsSlice = createSlice({
         .addCase(getSkills.fulfilled, (state, action) => {
             state.isLoading = false
             state.skillsArray = action.payload
+            
         })
         .addCase(getSkills.rejected, (state, action) => {
             state.isLoading = false
             state.error = action.error.message
             state.skillsArray = []
         })
+        .addCase(addSkill.fulfilled, (state, action) => {
+            state.isLoading = false 
+            state.skillsArray.unshift(action.payload)
+        })
     }
 })
 
-export const { actions, reducer} = getSkillsSlice
+export const { actions, reducer} = skillsSlice

@@ -14,13 +14,18 @@ const Skills = ()=> {
 
     const [showAddSkills, setShowAddSkills] = useState(false)
 
-    const {skillsArray, isLoading, error} = useSelector(state => state.reducers.getSkillsReducer)
+    const {skillsArray, isLoading, error} = useSelector(state => state.getSkillsReducer)
     const {getSkills} = useActions()
 
 
+    const uploadSkills = () => {
+        if (skillsArray.length === 0) {
+            getSkills()
+        }
+    }
 
     useEffect(() => {
-        getSkills()
+        uploadSkills()
         console.log(skillsArray)
     }, [])
 

@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TimeLine = () => {
 
-  const {educationArray, isLoading, error} = useSelector(state => state.reducers.educationReducer)
+  const {educationArray, isLoading, error} = useSelector(state => state.educationReducer)
   const {getEducation} = useActions()
 
   useEffect(() => {

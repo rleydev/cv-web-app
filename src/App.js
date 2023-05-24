@@ -5,7 +5,6 @@ import StartPage from './pages/startpage/StartPage';
 import MainPage from './pages/mainpage/MainPage';
 
 
-
 function App() {
   return (
     <div className='App'>
