@@ -1,4 +1,5 @@
 @use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
 
 .timeline {
     position: relative;
@@ -86,6 +87,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include mixins.media-query_min-width('1200px') {
+        width: 70vw;
+    }
+
+    @include mixins.media-query_min-width('1200px') {
+        width: 60vw;
+    }
+
+    @include mixins.media-query_min-width('1200px') {
+        width: 50vw;
+    }
 
     &__icon {
         width: 30px;

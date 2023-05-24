@@ -1,4 +1,6 @@
 @use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
+
 .form {
 
 
@@ -40,6 +42,11 @@
 
                 .textinput {
                     width: 270px;
+
+                    @include mixins.media-query_min-width('716px') {
+                        width: 100px;
+                    }
+                    
                     padding: 10px 10px 10px 10px;
                     color: var.$main-raven;
                     font-size: 12px;
