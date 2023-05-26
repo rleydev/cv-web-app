@@ -36,8 +36,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "npm test -- --coverage"
+    "test:coverage": "npm test -- --coverage --watchAll"
   },
+
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
@@ -52,6 +53,7 @@
       }
     }
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",

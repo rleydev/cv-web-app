@@ -17,12 +17,12 @@ const Skills = ()=> {
     const {skillsArray, isLoading, error} = useSelector(state => state.getSkillsReducer)
     const {getSkills} = useActions()
 
-    const uploadSkills = () => {
+    const downloadSkills = () => {
         skillsArray.length === 0 && getSkills();
     }
 
     useEffect(() => {
-        uploadSkills()
+        downloadSkills()
         console.log(skillsArray)
     }, [])
 

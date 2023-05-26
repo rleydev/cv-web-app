@@ -8,7 +8,7 @@ import Isotope from 'isotope-layout'
 const Portfolio = ({title}) => {
 
     const [filterType, setFilterType] = useState('all');
-    // const [showAnimation, setShowAnimation] = useState(false);
+
     const isotope = useRef()
     
     const portfolioData = [
@@ -111,9 +111,9 @@ const Portfolio = ({title}) => {
                 </div>
 
 
-                <div className={`portfolio__container__content-box`}>
+                <div data-testid="portfolio-item" className={`portfolio__container__content-box`}>
 
-                        <div className={`portfolio__container__content-box--item code`}>
+                        <div data-testid="portfolio-item-0" className={`portfolio__container__content-box--item code`}>
                             <img className={`portfolio__container__content-box--img `} src={portfImg1} alt={'portf'} />
                             <div className='portfolio-info'>
                                 <h4>Some text</h4>
@@ -121,7 +121,7 @@ const Portfolio = ({title}) => {
                                 <a href='https://github.com/rleydev/'>View source</a>
                             </div>
                         </div>
-                        <div className={`portfolio__container__content-box--item ui`}>
+                        <div data-testid="portfolio-item-1" className={`portfolio__container__content-box--item ui`}>
                             <img className={`portfolio__container__content-box--img `} src={portfImg2} alt={'portf'} />
                             <div className='portfolio-info'>
                                 <h4>Some text</h4>
@@ -129,7 +129,7 @@ const Portfolio = ({title}) => {
                                 <a href='https://github.com/rleydev/'>View source</a>
                             </div>
                         </div>
-                        <div className={`portfolio__container__content-box--item code`}>
+                        <div data-testid="portfolio-item-2" className={`portfolio__container__content-box--item code`}>
                             <img className={`portfolio__container__content-box--img `} src={portfImg1} alt={'portf'} />
                             <div className='portfolio-info'>
                                 <h4>Some text</h4>
@@ -137,7 +137,7 @@ const Portfolio = ({title}) => {
                                 <a href='https://github.com/rleydev/'>View source</a>
                             </div>
                         </div>
-                        <div className={`portfolio__container__content-box--item ui`}>
+                        <div data-testid="portfolio-item-3" className={`portfolio__container__content-box--item ui`}>
                             <img className={`portfolio__container__content-box--img `} src={portfImg2} alt={'portf'} />
                             <div className='portfolio-info'>
                                 <h4>Some text</h4>
