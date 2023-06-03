@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Proffesional CV Web App
+
+* Watch fetching data runnning local server by downloading the project 
+
+- Resposive landing 400px >
+
+- HTML
+- CSS
+- JavaScript
+- React
+- React Router Dom
+- NPM React dependencies
+- Redux Toolkit
+- Redux Persist
+- MirageJS server
+- Jest Tests
+
+## Comands
+- npm install
+- npm start (frontend and backend will run)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

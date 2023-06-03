@@ -1,6 +1,7 @@
 {
   "name": "professional-cv-web-app",
   "version": "0.1.0",
+  "homepage": "https://rleydev.github.io/cv-web-app",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -30,15 +31,15 @@
       "pre-push": "npm test -- --coverage --passWithNoTests -- --coverageThreshold=branches=35,function=35,lines=35,statements=35"
     }
   },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "npm test -- --coverage --watchAll"
+    "test:coverage": "npm test -- --coverage --watchAll",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
@@ -53,7 +54,6 @@
       }
     }
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -73,6 +73,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "husky": "^8.0.3",
     "miragejs": "^0.1.47",
     "redux-mock-store": "^1.5.4"

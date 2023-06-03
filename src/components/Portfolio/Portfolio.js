@@ -152,8 +152,4 @@ const Portfolio = ({title}) => {
     )
 }
 
-
-// ${filterType !== 'all' && filterType !== item.tag ? 'hide-image' : ""}
-// ${filterType && filterType !== 'all' && filterType !== item.tag ? 'image-animation' : ''}
-
 export default Portfolio
