@@ -1,4 +1,4 @@
-# Proffesional CV Web App
+# Professional CV Web App
 
 * Watch fetching data runnning local server by downloading the project 
 
