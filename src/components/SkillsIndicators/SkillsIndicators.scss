@@ -1,0 +1,41 @@
+@use '../../utils/styles/constants.scss' as var;
+
+.skills__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+
+    &__border {
+        height: 10px;
+        border-color: var.$main-raven;
+        display:  grid;
+        border-bottom: 1px solid;
+        
+        grid-template-columns: 1fr 1fr 1fr;
+
+        &--stick {
+            height: 10px;
+            border-left: 1px solid;
+            border-color: var.$main-raven;
+
+            &:last-of-type {
+                border-right: 1px solid;
+            }
+        }
+    }
+
+    &__text {
+        display:  flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+        p {
+            font-size: 12px;
+            font-weight: var.$font-weight-400;
+            line-height: 12.4px;
+            color: var.$main-raven;
+        }
+    }
+}

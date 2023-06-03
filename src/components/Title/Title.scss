@@ -1,0 +1,9 @@
+@use '../../utils/styles/constants.scss' as var;
+
+.title {
+    font-size: 25px;
+    font-weight: var.$font-weight-700;
+    line-height: 30px;
+    color: var.$main-green;
+    text-align: left;
+}

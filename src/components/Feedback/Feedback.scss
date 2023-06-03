@@ -1,0 +1,36 @@
+@use '../../utils/styles/constants.scss' as var;
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 38.5px;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: 18.5px;
+        align-items: flex-start;
+
+        &__user {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+
+            &__text {
+                font-size: 12px;
+                font-weight: var.$font-weight-400;
+                color: var.$main-dark-blue;
+                line-height: 14.4px;
+                
+
+                &__link {
+                    &:link {
+                        color: var.$main-green;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

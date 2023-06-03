@@ -1,0 +1,221 @@
+@use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
+
+.panel--hidden {
+    position: relative;
+    width: 0;
+    height: 100vh;
+    transition: all .3s linear;
+
+    .panel__stick {
+        position: fixed;
+        top: 20px;
+        left: 0px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        width: 30px;
+        transition: all .3s linear;
+    }
+
+}
+
+
+
+.panel-photo--hidden {
+ 
+    transition: all .3s linear;
+    display: none;
+    visibility: hidden;
+}
+
+.panel-button--hidden {
+    bottom: 32px;
+    left: 0px;
+    display: none;
+    visibility: hidden;
+    transition: all .3s linear; 
+
+}
+
+
+.panel {
+    background-color: var.$main-dark-blue;
+    height: 100vh;
+    width: 250px;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    @include mixins.media-query_min-width('600px') {
+        width: 54px;
+        transition: all .3s linear;
+    }
+
+    @include mixins.media-query_max-width('600px') {
+        width: 250px;
+        transition: all .3s linear; 
+    }
+
+    &__stick {
+        width: 30px;
+        height: 30px;
+        background-color: var.$main-dark-blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        position: absolute;
+        top: 20px;
+        left: 240px;
+
+        @include mixins.media-query_min-width('600px') {
+            left: 47px;
+            width: 33px;
+            transition: all .3s linear;
+        }
+
+        @include mixins.media-query_max-width('600px') {
+            left: 240px;
+            width: 40px;
+            transition: all .3s linear; 
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &__img {
+            margin-left: 5px;
+            width: 12px;
+            height: 10px;
+        }
+
+    }
+
+    &__photo-container {
+        padding-top: 10px;
+        
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        
+        &__photo {
+            width: 100px;
+            height: 100px;
+
+            @include mixins.media-query_min-width('600px') {
+                width: 40px;
+                height: 40px;
+                transition: all .3s linear; 
+            }
+
+            @include mixins.media-query_max-width('600px') {
+                width: 100px;
+                height: 100px;
+                transition: all .3s linear; 
+            }
+        }
+
+        &__name {
+            font-size: 16px;
+            font-weight: var.$font-weight-400;
+            line-height: 19.2px;
+            color: white;
+
+            @include mixins.media-query_min-width('600px') {
+                display: none;
+            }
+        }
+    }
+
+    &__nav-container {
+        margin-top: 69px;
+
+        @include mixins.media-query_min-width('600px') {
+          
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 32px;
+        left: 60px;
+
+        text-decoration: none;
+
+        transition: all .4s linear;
+
+
+        @include mixins.media-query_min-width('600px') {
+            bottom: 29px;
+            left: 8px;
+            transition: all .1s linear; 
+        }
+
+        @include mixins.media-query_max-width('600px') {
+            
+            bottom: 32px;
+            left: 60px;
+            transition: all .3s linear; 
+        }
+
+        
+       &__but {
+
+        @include mixins.media-query_min-width('600px') {
+            width: 40px;
+            height: 30px;
+            transition: all .1s linear; 
+        }
+
+        @include mixins.media-query_max-width('600px') {
+            height: 40px;
+            width: 127px;
+            transition: all .2s linear; 
+        }
+
+            border-radius: 5px;
+            border: none;
+            font-weight: 400;
+            color: white;
+            size: 16px;
+            line-height: 19px;
+            background-color: var.$main-dark-blue;
+            display: flex;
+            flex-direction: row;
+            gap: 13px;
+            align-items: center;
+            justify-content: center;
+
+            height: 40px;
+            width: 127px;
+            
+            &:hover {
+                cursor: pointer;
+                background-color: var.$main-green;
+            }
+
+            &__text {
+
+                @include mixins.media-query_min-width('600px') { 
+                    display: none;
+                }
+
+                @include mixins.media-query_max-width('600px') {
+                    display: block;
+                }
+            }
+       }
+    }
+}

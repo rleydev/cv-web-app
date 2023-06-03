@@ -1,0 +1,65 @@
+@use '../../utils/styles/constants.scss' as var;
+.skills {
+
+
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+
+        margin-bottom: 40px;
+
+        &__button {
+            border: none;
+            border-radius: 5px;
+            background-color: var.$main-dark-blue;
+            width: 138px;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: var.$font-weight-400;
+                line-height: 19.2px;
+                color: white;
+            }
+        }
+
+    }
+
+    &__items-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        margin-top: 40px;
+  
+        &__item {
+            height: 29px;
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            background-color: var.$main-green;
+         
+
+            p {
+                font-size: 16px;
+                font-weight: var.$font-weight-400;
+                line-height: 19.2px;
+                color: white;
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,94 @@
+@use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
+
+.form {
+
+
+    &__container {
+        display: flex;
+        flex-direction:column;
+        height: 200px;
+        justify-content: center;
+       
+        padding-left: 15px;
+        border: 1px solid;
+        border-radius: 5px;
+        border-color: var.$main-green;
+
+        &--gap {
+            height: 20px;
+        }
+
+        &__input-box {
+            
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: flex-start;
+
+            .stroke {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+                height: 40px;
+
+                .label {
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16.8px;
+                    color: black;
+                }
+
+                .textinput {
+                    width: 270px;
+
+                    @include mixins.media-query_min-width('716px') {
+                        width: 100px;
+                    }
+                    
+                    padding: 10px 10px 10px 10px;
+                    color: var.$main-raven;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 14px;
+                }
+
+            }
+        }
+
+        .submit-but {
+            background-color: var.$main-dark-blue;
+            color: white;
+            width: 103px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:disabled {
+                cursor: none;
+                color: black;
+                background-color: gray;
+            }
+         
+        }
+    }
+}
+
+.error-border {
+    border: 1px solid;
+    border-color: red;
+}
+
+.error-text {
+
+    font-size: 10px;
+    color: red;
+    text-align: left;
+    line-height: 20px;
+    font-weight: 400;
+}

@@ -1,0 +1,116 @@
+@use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
+
+.timeline {
+    position: relative;
+    margin-left: 26px;
+    
+    border-left: 5px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: var.$main-green;
+
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    align-items: flex-start;
+    
+
+        &__label {
+            position: absolute;
+            height: 48px;
+            width: auto;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: -15px;
+            left: -18px;
+            margin-top: 14px;
+        }
+
+
+    &__right {
+        display: flex;
+        
+        margin-left: 45px;
+
+        &__arrow {
+           width: 10px;
+           height: 13px;
+           margin-top: 18px;
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+           
+            background-color: var.$main-gray;
+
+            &__text {
+                font-size: 14px;
+                font-weight: var.$font-weight-400;
+                line-height: 21px;
+                color: var.$main-dark-blue;
+                text-align: left;
+            }
+        }
+    } 
+}
+
+.timeline__container {
+    max-height: 80vh;
+    overflow-y: auto;
+    border: none;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.timeline-container--uploading {
+    height: 35vh;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mixins.media-query_min-width('1200px') {
+        width: 70vw;
+    }
+
+    @include mixins.media-query_min-width('1200px') {
+        width: 60vw;
+    }
+
+    @include mixins.media-query_min-width('1200px') {
+        width: 50vw;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        align-self: center;
+        animation: rotateIcon 2s infinite linear;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: red;
+    }
+    
+}

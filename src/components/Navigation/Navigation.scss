@@ -1,0 +1,70 @@
+@use '../../utils/styles/constants.scss' as var;
+@use '../../utils/styles/mixins.scss' as mixins;
+
+.nav--hidden {
+    .navigation__container__link {
+        opacity: 0;
+    }
+
+    .navigation__container__icon {
+        opacity: 0;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        text-decoration: none;
+
+        padding-left: 21px;
+        padding-top: 23px;
+        padding-bottom: 23px;
+
+        &:hover {
+
+            cursor: pointer;
+
+            .navigation__container__icon {
+                color: var.$main-green;
+            }
+
+            .navigation__container__link {
+                color: var.$main-green;
+            }
+        }
+
+        &__icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        &__link {
+            font-size: 16px;
+            font-weight: var.$font-weight-400;
+            line-height: 19.2px;
+            color: var.$main-raven;
+
+            @include mixins.media-query_min-width('600px') {
+                display: none;
+            }
+           
+        }
+    }
+}
+
+.current-page-location {
+    .navigation__container__icon {
+        color: var.$main-green;
+    }
+
+    .navigation__container__link {
+        color: var.$main-green;
+    }
+}
